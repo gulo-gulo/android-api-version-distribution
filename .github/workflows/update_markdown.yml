@@ -1,0 +1,32 @@
+name: Update Markdown
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '2 4 * * *'
+  push:
+    branches:
+      - 'develop'
+jobs:
+  daily_update_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9.13'
+      - name: update markdown
+        if: github.event.schedule || contains(github.event.head_commit.message,'execute_action')
+#        TODO - improve git logic
+        run: |
+          git config --global user.email ""
+          git config --global user.name "daily_update_job"
+          pip3 install -r requirements.txt
+          python3 update_markdown.py
+          git pull
+          git stash
+          git switch main
+          git pull
+          git merge --squash --strategy-option=theirs stash --allow-unrelated-histories
+          git add .
+          git commit -m "daily update"
+          git push
