@@ -2,7 +2,7 @@
 #### Source
 - https://dl.google.com/android/studio/metadata/distributions.json
 #### Updated daily
-- Last Updated: 03/23/2023 04:06:17 UTC
+- Last Updated: 03/24/2023 04:06:13 UTC
 
 API | Version | Distribution | Cumulative | Notes |
 | -- | ------ | ------------ | ---------- | ----- |
