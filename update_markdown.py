@@ -46,8 +46,8 @@ def get_remaining_distribution(distribution_list: list[Distribution]) -> Distrib
     last_distribution = distribution_list[len(distribution_list) - 1]
     return Distribution(
         distribution_percentage=1 - cumulative_total,
-        version=f"> {last_distribution.version}",
-        api_level=f"> {last_distribution.api_level}"
+        version=f">{last_distribution.version}",
+        api_level=f">{last_distribution.api_level}"
     )
 
 
