@@ -60,9 +60,9 @@ def format_decimal(number: float) -> str:
 
 def update_markdown():
     distribution_list = get_and_store_distributions()
-    current_time = datetime.utcnow().strftime("%m/%d/%Y %H:%M:%S UTC")
     remaining_distribution = get_remaining_distribution(distribution_list)
     distribution_list.append(remaining_distribution)
+    current_time = datetime.utcnow().strftime("%m/%d/%Y %H:%M:%S UTC")
     markdown_lines = [
         "# Android API & Version Distribution",
         f"#### Source",
