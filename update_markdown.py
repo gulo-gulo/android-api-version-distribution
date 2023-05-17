@@ -81,7 +81,7 @@ def update_markdown():
         cumulative_pct = format_decimal((1 - percentage_sum + distribution.distribution_percentage) * 100)
         notes = "Retrieved from [source](#source)"
         if index == last_index:
-            notes = "`100% - sum of all rows above`"
+            notes = "100% - sum of all rows above"
         row = f"| {distribution.api_level} " \
               f"| {distribution.version} " \
               f"| {distribution_pct}% " \
