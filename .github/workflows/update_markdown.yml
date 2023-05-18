@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: '3.9.13'
       - name: update markdown
-        if: github.event.schedule || contains(github.event.head_commit.message,'execute_action')
+        if: github.event.schedule || contains(github.event.head_commit.message,'execute_action') || github.event_name == 'workflow_dispatch'
 #        TODO - improve git logic
         run: |
           git config --global user.email ""
