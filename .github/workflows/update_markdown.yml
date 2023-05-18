@@ -21,7 +21,9 @@ jobs:
           git config --global user.email ""
           git config --global user.name "daily_update_job"
           pip3 install -r requirements.txt
+          echo "Will run update_markdown.py"
           python3 update_markdown.py
+          echo "Ran update_markdown.py"
           git pull
           git stash
           git switch main
