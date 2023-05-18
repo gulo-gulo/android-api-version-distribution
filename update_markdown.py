@@ -59,6 +59,7 @@ def format_decimal(number: float) -> str:
 
 
 def update_markdown():
+    print("Updating markdown...")
     distribution_list = get_and_store_distributions()
     remaining_distribution = get_remaining_distribution(distribution_list)
     distribution_list.append(remaining_distribution)
@@ -89,6 +90,7 @@ def update_markdown():
               f"| {notes} |"
         markdown_lines.append(row)
     write_lines_to_markdown(markdown_lines)
+    print("Markdown updated!")
 
 
 if __name__ == '__main__':
